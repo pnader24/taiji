@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .taiji {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(90deg, #000 50%, #fff 50%);
+            border-radius: 50%;
+            position: relative;
+            animation: rotate 4s linear infinite;
+        }
+
+        .taiji::before,
+        .taiji::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            left: 75px;
+        }
+
+        .taiji::before {
+            background: #000;
+            top: 0;
+            background: radial-gradient(circle at center 37.5px, #fff 25px, #000 25px);
+        }
+
+        .taiji::after {
+            background: #fff;
+            bottom: 0;
+            background: radial-gradient(circle at center 37.5px, #000 25px, #fff 25px);
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="taiji"></div>
+</body>
+</html>
